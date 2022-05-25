@@ -13,10 +13,10 @@ const SkipNavLink: FC<Props> = ({
 }) => {
   const router = useRouter();
   const currentUrl = router.asPath;
-  const skipRef = useRef();
+  const skipRef: any = useRef();
   useEffect(() => {
     if (skipRef && skipRef.current) {
-      skipRef.current.focus();
+      skipRef.current?.focus();
     }
   }, [currentUrl]);
 
