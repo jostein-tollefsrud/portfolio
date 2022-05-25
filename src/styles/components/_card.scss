@@ -1,0 +1,24 @@
+.card {
+  display: inline-block;
+  border: var(--border-2);
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
+  transition: all 0.2s;
+
+  &__info {
+    background-color: #fff;
+    padding: 2rem;
+    border-top: 2px solid black;
+    // border-radius: 0 0 var(--border-radius-small) var(--border-radius-small);
+  }
+
+  &__readmore {
+    font-weight: 600;
+  }
+
+  &:hover,
+  &:active {
+    box-shadow: 2px 2px 0 black;
+    transform: translate(-2px, -2px);
+  }
+}
