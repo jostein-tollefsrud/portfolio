@@ -44,7 +44,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* #### PROJECTS #### */}
-        <section className='section-projects'>
+        <section id='projects' className='section-projects'>
           <div className='projects'>
             <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
               Projects
@@ -114,7 +114,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* #### ABOUT #### */}
-        <section className='section-about'>
+        <section id='about' className='section-about'>
           <div className='section-about__container'>
             <h2 className='heading-secondary u-margin-bottom-large'>
               About myself
@@ -133,7 +133,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* #### CONTACT #### */}
-        <section className='section-contact'>
+        <section id='contact' className='section-contact'>
           <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
             Get in touch
           </h2>
