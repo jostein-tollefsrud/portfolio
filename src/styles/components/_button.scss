@@ -1,0 +1,51 @@
+.btn {
+  position: relative;
+  &,
+  &:link,
+  &:visited {
+    display: inline-block;
+    font-size: var(--font-size-medium);
+    font-family: 'Barlow Condensed';
+    font-weight: 600;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--border-radius-small);
+    border: 2px solid black;
+    padding: 1rem 2rem;
+    box-shadow: 2px 2px 0 black;
+    transition: all 0.2s;
+    position: relative;
+    color: inherit;
+    z-index: 2;
+
+    // for <button> element
+    cursor: pointer;
+  }
+
+  &--red {
+    background-color: var(--color-red);
+    position: relative;
+  }
+}
+
+.blob {
+  &::before {
+    // content: url(../../../public/images/blob-small.png);
+    content: '';
+    position: absolute;
+    background: url('../../../public/images/blob-small.png') no-repeat;
+    background-size: contain;
+    top: -1.5rem;
+    right: -4rem;
+    height: 11rem;
+    width: 11rem;
+    z-index: 1;
+    animation: blob-rotate 100s linear infinite;
+  }
+}
+
+.hero__button-container {
+  position: relative;
+  display: inline-block;
+}

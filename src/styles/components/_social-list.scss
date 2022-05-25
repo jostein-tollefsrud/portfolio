@@ -1,0 +1,42 @@
+.social-list {
+  list-style: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+  margin-top: 3rem;
+
+  .list-item {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    &__box {
+      background-color: var(--color-yellow);
+      border-radius: 50%;
+      padding: 1rem;
+      border: var(--border-2);
+      width: 5rem;
+      height: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &--icon {
+        font-size: 4.5rem;
+      }
+    }
+
+    // &__icon {
+    //   background-color: var(--color-yellow);
+    //   font-size: 4.5rem;
+    //   border-radius: 50%;
+    //   padding: 0.6rem;
+    //   border: var(--border-2);
+    // }
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

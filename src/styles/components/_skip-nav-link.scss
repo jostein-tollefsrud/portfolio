@@ -1,0 +1,12 @@
+.skip-nav-link {
+  margin-right: 1rem;
+  position: absolute;
+  transform: translateX(-200%);
+  transition: transform 0.3s;
+
+  &:focus {
+    position: static;
+    transform: translateX(0);
+    z-index: 9999;
+  }
+}
