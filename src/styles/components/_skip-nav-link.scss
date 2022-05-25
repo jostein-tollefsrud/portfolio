@@ -3,10 +3,17 @@
   position: absolute;
   transform: translateX(-200%);
   transition: transform 0.3s;
+  border: 1px solid black;
+  display: block;
+  width: 100%;
+  padding: 0.3rem 0 0.3rem 1rem;
+  background-color: var(--color-red);
+  font-weight: 600;
 
   &:focus {
     position: static;
     transform: translateX(0);
     z-index: 9999;
+    outline: none;
   }
 }
