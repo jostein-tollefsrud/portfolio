@@ -9,19 +9,53 @@
     background-color: var(--color-green);
     border: var(--border-1);
     padding: 5rem;
+
+    & > * {
+      max-width: 40rem;
+      margin: auto;
+    }
+  }
+
+  @include respond(710px) {
+    display: flex;
+
+    &--left {
+      width: 50%;
+      display: flex;
+      justify-content: flex-end;
+
+      & > * {
+        max-width: 40ch;
+      }
+    }
+
+    &--right {
+      width: 50%;
+      display: flex;
+      align-items: center;
+      & > div {
+        width: 100%;
+        margin: 0;
+      }
+    }
   }
 }
 
 .section-projects {
   background-color: var(--color-pink);
   border: var(--border-1);
-  padding: 5rem;
+  padding: 5rem 1rem;
 }
 
 .section-about {
   background-color: var(--color-green);
   border: var(--border-1);
   padding: 5rem;
+
+  &__container {
+    max-width: var(--max-width-text);
+    margin: auto;
+  }
 }
 
 .section-contact {
@@ -97,7 +131,7 @@
         grid-column-end: 3;
         grid-row-start: 1;
         grid-row-end: 4;
-        padding: 3rem;
+        padding: 5rem;
         padding-right: 35rem;
         background-color: var(--color-green);
         border-radius: 7px;
@@ -139,5 +173,19 @@
     left: 3rem;
     position: absolute;
     animation: avatar 10s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
+  }
+}
+
+.projects {
+  max-width: 1300px;
+  margin: auto;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    @include respond(830px) {
+      flex-direction: row;
+    }
   }
 }

@@ -3,7 +3,12 @@ import AvatarSmall from '@/components/AvatarSmall';
 import FormSocialList from '@/components/FormSocialList';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import Link from 'next/link';
+
+import PortfolioImg from '../../public/images/min-portfolio.png';
+import PlantmanagerImg from '../../public/images/ntnu-plant-manager.png';
+import BachelorImg from '../../public/images/refurbishing-huset.png';
 
 const Home: NextPage = () => {
   return (
@@ -15,30 +20,117 @@ const Home: NextPage = () => {
       <main id='maincontent'>
         <section className='section-hero'>
           <div className='section-hero--left'>
-            <h1 className='heading-primary u-margin-bottom-medium'>
-              Hi there, my name is Jostein
-            </h1>
-            <p className='text-sub u-margin-bottom-large'>
-              I am a fullstack web developer with a passion for clean code.
-            </p>
-            <div className='hero__button-container'>
-              <Link href='#projects'>
-                <a className='btn btn--red '>My PROJECTS</a>
-              </Link>
-              <span className='blob'></span>
+            <div>
+              <h1 className='heading-primary u-margin-bottom-medium'>
+                Hi there, my name is Jostein
+              </h1>
+              <p className='text-sub u-margin-bottom-large'>
+                I am a fullstack web developer with a passion for clean code.
+              </p>
+              <div className='hero__button-container'>
+                <Link href='#projects'>
+                  <a className='btn btn--red '>My PROJECTS</a>
+                </Link>
+                <span className='blob'></span>
+              </div>
             </div>
           </div>
 
           <div className='section-hero--right'>
-            <AvatarFull />
+            <div>
+              <AvatarFull />
+            </div>
           </div>
         </section>
 
         {/* #### PROJECTS #### */}
-        <section className='section-projects'>projects here</section>
+        <section className='section-projects'>
+          <div className='projects'>
+            <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
+              Projects
+            </h2>
+            <div className='projects__container'>
+              <Link href={'#'}>
+                <a>
+                  <article className='card'>
+                    <div className='card__image'>
+                      <Image src={PortfolioImg} alt='' layout='responsive' />
+                    </div>
+                    <div className='card__info'>
+                      <h3 className='heading-tertiary u-margin-bottom-small'>
+                        NTNU plant manager
+                      </h3>
+                      <p className='card__text u-margin-bottom-medium'>
+                        Almost before we knew it, we had left the ground. Almost
+                        before we knew it, we had left the ground.
+                      </p>
+                      <div className='card__readmore'>Read more &rarr; </div>
+                    </div>
+                  </article>
+                </a>
+              </Link>
+
+              <Link href={'#'}>
+                <a>
+                  <article className='card'>
+                    <div className='card__image'>
+                      <Image src={PlantmanagerImg} alt='' layout='responsive' />
+                    </div>
+                    <div className='card__info'>
+                      <h3 className='heading-tertiary u-margin-bottom-small'>
+                        NTNU plant manager
+                      </h3>
+                      <p className='card__text u-margin-bottom-medium'>
+                        Almost before we knew it, we had left the ground. Almost
+                        before we knew it, we had left the ground.
+                      </p>
+                      <div className='card__readmore'>Read more &rarr; </div>
+                    </div>
+                  </article>
+                </a>
+              </Link>
+
+              <Link href={'#'}>
+                <a>
+                  <article className='card'>
+                    <div className='card__image'>
+                      <Image src={BachelorImg} alt='' layout='responsive' />
+                    </div>
+                    <div className='card__info'>
+                      <h3 className='heading-tertiary u-margin-bottom-small'>
+                        NTNU plant manager
+                      </h3>
+                      <p className='card__text u-margin-bottom-medium'>
+                        Almost before we knew it, we had left the ground. Almost
+                        before we knew it, we had left the ground.
+                      </p>
+                      <div className='card__readmore'>Read more &rarr; </div>
+                    </div>
+                  </article>
+                </a>
+              </Link>
+            </div>
+          </div>
+        </section>
 
         {/* #### ABOUT #### */}
-        <section className='section-about'>about here</section>
+        <section className='section-about'>
+          <div className='section-about__container'>
+            <h2 className='heading-secondary u-margin-bottom-large'>
+              About myself
+            </h2>
+            <p>
+              My name is Jostein Tollefsrud. I am 27 years, from a small place
+              called Odnes in Norway. Just finished a three years bachelor
+              degree in web development from the Norwegian University of Science
+              and Technology (NTNU).
+            </p>
+            <p>
+              These days I spend on diving into typescript and test driven
+              development.
+            </p>
+          </div>
+        </section>
 
         {/* #### CONTACT #### */}
         <section className='section-contact'>
@@ -52,7 +144,7 @@ const Home: NextPage = () => {
                 <AvatarSmall />
               </div>
               <div className='contact-flex--left'>
-                <p>
+                <p className='text-sub'>
                   If you want to contact me you can use the form or one of the
                   listed items
                 </p>
