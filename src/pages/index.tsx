@@ -1,10 +1,11 @@
 import AvatarFull from '@/components/AvatarFull';
 import AvatarSmall from '@/components/AvatarSmall';
+import ContactForm from '@/components/ContactForm';
 import FormSocialList from '@/components/FormSocialList';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import Link from 'next/link';
+import Card from '@/components/Card';
 
 import PortfolioImg from '../../public/images/min-portfolio.png';
 import PlantmanagerImg from '../../public/images/ntnu-plant-manager.png';
@@ -45,71 +46,39 @@ const Home: NextPage = () => {
 
         {/* #### PROJECTS #### */}
         <section id='projects' className='section-projects'>
-          <div className='projects'>
-            <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
-              Projects
-            </h2>
-            <div className='projects__container'>
-              <Link href={'#'}>
-                <a>
-                  <article className='card'>
-                    <div className='card__image'>
-                      <Image src={PortfolioImg} alt='' layout='responsive' />
-                    </div>
-                    <div className='card__info'>
-                      <h3 className='heading-tertiary u-margin-bottom-small'>
-                        NTNU plant manager
-                      </h3>
-                      <p className='card__text u-margin-bottom-medium'>
-                        Almost before we knew it, we had left the ground. Almost
-                        before we knew it, we had left the ground.
-                      </p>
-                      <div className='card__readmore'>Read more &rarr; </div>
-                    </div>
-                  </article>
-                </a>
-              </Link>
+          <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
+            Projects
+          </h2>
+          <div className='card-container'>
+            <Card
+              link='#'
+              image={PortfolioImg}
+              alt=''
+              title={'NTNU plant manager'}
+            >
+              Almost before we knew it, we had left the ground. Almost before we
+              knew it, we had left the ground.
+            </Card>
 
-              <Link href={'#'}>
-                <a>
-                  <article className='card'>
-                    <div className='card__image'>
-                      <Image src={PlantmanagerImg} alt='' layout='responsive' />
-                    </div>
-                    <div className='card__info'>
-                      <h3 className='heading-tertiary u-margin-bottom-small'>
-                        NTNU plant manager
-                      </h3>
-                      <p className='card__text u-margin-bottom-medium'>
-                        Almost before we knew it, we had left the ground. Almost
-                        before we knew it, we had left the ground.
-                      </p>
-                      <div className='card__readmore'>Read more &rarr; </div>
-                    </div>
-                  </article>
-                </a>
-              </Link>
+            <Card
+              link='#'
+              image={PlantmanagerImg}
+              alt=''
+              title={'NTNU plant manager'}
+            >
+              Almost before we knew it, we had left the ground. Almost before we
+              knew it, we had left the ground.
+            </Card>
 
-              <Link href={'#'}>
-                <a>
-                  <article className='card'>
-                    <div className='card__image'>
-                      <Image src={BachelorImg} alt='' layout='responsive' />
-                    </div>
-                    <div className='card__info'>
-                      <h3 className='heading-tertiary u-margin-bottom-small'>
-                        NTNU plant manager
-                      </h3>
-                      <p className='card__text u-margin-bottom-medium'>
-                        Almost before we knew it, we had left the ground. Almost
-                        before we knew it, we had left the ground.
-                      </p>
-                      <div className='card__readmore'>Read more &rarr; </div>
-                    </div>
-                  </article>
-                </a>
-              </Link>
-            </div>
+            <Card
+              link='#'
+              image={BachelorImg}
+              alt=''
+              title={'NTNU plant manager'}
+            >
+              Almost before we knew it, we had left the ground. Almost before we
+              knew it, we had left the ground.
+            </Card>
           </div>
         </section>
 
@@ -155,18 +124,7 @@ const Home: NextPage = () => {
                 <div className='form-avatar'>
                   <AvatarSmall />
                 </div>
-                <form className='form'>
-                  <label htmlFor='name'>Name</label>
-                  <input type='text' name='name' id='name' />
-
-                  <label htmlFor='email'>Email</label>
-                  <input type='email' name='email' id='email' />
-
-                  <label htmlFor='message'>Message</label>
-                  <textarea name='message' id='message'></textarea>
-
-                  <button className='btn btn--red'>Send message</button>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>

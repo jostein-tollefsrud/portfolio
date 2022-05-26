@@ -175,17 +175,3 @@
     animation: avatar 10s cubic-bezier(0.68, -0.6, 0.32, 1.6) infinite;
   }
 }
-
-.projects {
-  max-width: 1300px;
-  margin: auto;
-  &__container {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-
-    @include respond(830px) {
-      flex-direction: row;
-    }
-  }
-}

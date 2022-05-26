@@ -1,6 +1,5 @@
 .form {
   background-color: #ffffff;
-  // max-width: 45rem;
   padding: 3rem;
   border: var(--border-2);
   border-radius: var(--border-radius-small);
@@ -8,23 +7,7 @@
   flex-direction: column;
   box-shadow: 2px 2px 0 black;
 
-  input,
-  textarea {
-    padding: 1rem;
-    border-radius: var(--border-radius-small);
-    border: var(--border-2);
-    font-size: inherit;
-    font-family: inherit;
-    margin-bottom: 2.5rem;
-  }
-
-  textarea {
-    min-height: 15rem;
-  }
-
-  label {
-    font-family: 'Barlow Condensed';
-    font-weight: 600;
-    text-transform: uppercase;
-  }
+  // button:disabled {
+  //   opacity: 0.5;
+  // }
 }

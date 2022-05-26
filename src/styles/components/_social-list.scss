@@ -9,6 +9,29 @@
       display: flex;
       align-items: center;
       gap: 1rem;
+      position: relative;
+      outline: none;
+
+      &::before {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        background-color: var(--color-yellow);
+        top: 0;
+        left: 2.7rem;
+        width: 12rem;
+        height: 100%;
+        z-index: -1;
+        border-radius: 0 100px 100px 0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s;
+      }
+
+      &:hover::before,
+      &:focus::before {
+        transform: scaleX(1);
+      }
     }
 
     &__box {
@@ -26,14 +49,6 @@
         font-size: 4.5rem;
       }
     }
-
-    // &__icon {
-    //   background-color: var(--color-yellow);
-    //   font-size: 4.5rem;
-    //   border-radius: 50%;
-    //   padding: 0.6rem;
-    //   border: var(--border-2);
-    // }
 
     &:not(:last-child) {
       margin-bottom: 1rem;
