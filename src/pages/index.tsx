@@ -10,6 +10,7 @@ import Card from '@/components/Card';
 import PortfolioImg from '../../public/images/min-portfolio.png';
 import PlantmanagerImg from '../../public/images/ntnu-plant-manager.png';
 import BachelorImg from '../../public/images/refurbishing-huset.png';
+import AboutSection from '@/components/AboutSection';
 
 const Home: NextPage = () => {
   return (
@@ -83,23 +84,7 @@ const Home: NextPage = () => {
         </section>
 
         {/* #### ABOUT #### */}
-        <section id='about' className='section-about'>
-          <div className='section-about__container'>
-            <h2 className='heading-secondary u-margin-bottom-large'>
-              About myself
-            </h2>
-            <p>
-              My name is Jostein Tollefsrud. I am 27 years, from a small place
-              called Odnes in Norway. Just finished a three years bachelor
-              degree in web development from the Norwegian University of Science
-              and Technology (NTNU).
-            </p>
-            <p>
-              These days I spend on diving into typescript and test driven
-              development.
-            </p>
-          </div>
-        </section>
+        <AboutSection />
 
         {/* #### CONTACT #### */}
         <section id='contact' className='section-contact'>
