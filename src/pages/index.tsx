@@ -5,14 +5,22 @@ import FormSocialList from '@/components/FormSocialList';
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import Card from '@/components/Card';
 
-import PortfolioImg from '../../public/images/min-portfolio.png';
-import PlantmanagerImg from '../../public/images/ntnu-plant-manager.png';
-import BachelorImg from '../../public/images/refurbishing-huset.png';
 import AboutSection from '@/components/AboutSection';
+import ProjectsSection from '@/components/ProjectsSection';
+import { getBase64ImageUrl } from 'src/utils/base64';
 
-const Home: NextPage = () => {
+interface Props {
+  plantmanagerImg: any;
+  bachelorImg: any;
+  portfolioImg: any;
+}
+
+const Home: NextPage<Props> = ({
+  plantmanagerImg,
+  bachelorImg,
+  portfolioImg,
+}) => {
   return (
     <div>
       <Head>
@@ -46,42 +54,11 @@ const Home: NextPage = () => {
         </section>
 
         {/* #### PROJECTS #### */}
-        <section id='projects' className='section-projects'>
-          <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
-            Projects
-          </h2>
-          <div className='card-container'>
-            <Card
-              link='#'
-              image={PortfolioImg}
-              alt=''
-              title={'NTNU plant manager'}
-            >
-              Almost before we knew it, we had left the ground. Almost before we
-              knew it, we had left the ground.
-            </Card>
-
-            <Card
-              link='#'
-              image={PlantmanagerImg}
-              alt=''
-              title={'NTNU plant manager'}
-            >
-              Almost before we knew it, we had left the ground. Almost before we
-              knew it, we had left the ground.
-            </Card>
-
-            <Card
-              link='#'
-              image={BachelorImg}
-              alt=''
-              title={'NTNU plant manager'}
-            >
-              Almost before we knew it, we had left the ground. Almost before we
-              knew it, we had left the ground.
-            </Card>
-          </div>
-        </section>
+        <ProjectsSection
+          plantmanagerImg={plantmanagerImg}
+          bachelorImg={bachelorImg}
+          portfolioImg={portfolioImg}
+        />
 
         {/* #### ABOUT #### */}
         <AboutSection />
@@ -118,5 +95,39 @@ const Home: NextPage = () => {
     </div>
   );
 };
+
+export async function getStaticProps() {
+  const plantmanagerImgSrc = process.env.CLOUDINARY_PLANTMANAGER_IMAGE_SRC;
+  const bachelorImgSrc = process.env.CLOUDINARY_BACHELOR_IMAGE_SRC;
+  const portfolioImgSrc = process.env.CLOUDINARY_PORTFOLIO_IMAGE_SRC;
+  if (!plantmanagerImgSrc || !bachelorImgSrc || !portfolioImgSrc) {
+    throw new Error('Missing CLOUDINARY_EXAMPLE_IMAGE_SRC env variable');
+  }
+
+  const plantmanagerImgSrcblurDataUrl = await getBase64ImageUrl(
+    plantmanagerImgSrc
+  );
+
+  const bachelorImgSrcblurDataUrl = await getBase64ImageUrl(bachelorImgSrc);
+
+  const portfolioImgSrcblurDataUrl = await getBase64ImageUrl(portfolioImgSrc);
+
+  return {
+    props: {
+      plantmanagerImg: {
+        src: plantmanagerImgSrc,
+        blurDataUrl: plantmanagerImgSrcblurDataUrl,
+      },
+      bachelorImg: {
+        src: bachelorImgSrc,
+        blurDataUrl: bachelorImgSrcblurDataUrl,
+      },
+      portfolioImg: {
+        src: portfolioImgSrc,
+        blurDataUrl: portfolioImgSrcblurDataUrl,
+      },
+    },
+  };
+}
 
 export default Home;

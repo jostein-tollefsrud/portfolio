@@ -3,20 +3,29 @@ import Link from 'next/link';
 import { FC } from 'react';
 
 interface Props {
-  image: any;
   alt: string;
   title: string;
   children: React.ReactNode;
   link: string;
+  cloudinaryImage: any;
 }
 
-const Card: FC<Props> = ({ image, alt, title, children, link }) => {
+const Card: FC<Props> = ({ cloudinaryImage, alt, title, children, link }) => {
   return (
     <Link href={link}>
       <a className='card'>
         <article>
           <div className='card__image'>
-            <Image src={image} alt={alt} layout='responsive' />
+            <Image
+              src={cloudinaryImage.src}
+              alt={alt}
+              layout='fill'
+              objectFit='cover'
+              quality='75'
+              sizes='60vw'
+              placeholder='blur'
+              blurDataURL={cloudinaryImage.blurDataUrl}
+            />
           </div>
           <div className='card__info'>
             <h3 className='heading-tertiary u-margin-bottom-small'>{title}</h3>

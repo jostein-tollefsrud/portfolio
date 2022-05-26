@@ -1,0 +1,23 @@
+.footer {
+  text-align: center;
+  border: 1px solid black;
+  border-bottom: none;
+  padding: 1rem 1rem 3rem 1rem;
+  ul {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: center;
+
+    li {
+      a {
+        display: inline-block;
+        padding: 2rem;
+      }
+    }
+  }
+
+  p {
+    font-size: 1.4rem;
+  }
+}
