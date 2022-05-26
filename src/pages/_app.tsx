@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <main id='main-content' tabIndex={-1}>
         <Component {...pageProps} />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

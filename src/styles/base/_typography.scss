@@ -8,6 +8,15 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+
+  &.link {
+    text-decoration: underline;
+    color: rgb(50, 50, 222);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 .heading-primary {

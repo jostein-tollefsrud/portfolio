@@ -16,6 +16,11 @@
     font-weight: 600;
   }
 
+  &__image {
+    position: relative;
+    height: 20rem;
+  }
+
   &:hover,
   &:focus,
   &:active {
