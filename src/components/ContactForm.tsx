@@ -4,12 +4,12 @@ import { basicSchema } from '../schemas/formValidations';
 import TextField from '@/components/TextField';
 import TextArea from '@/components/TextArea';
 
-interface FormValues {
-  initialValues: object;
-  name: string;
-  email: string;
-  message: string;
-}
+// interface FormValues {
+//   initialValues: object;
+//   name: string;
+//   email: string;
+//   message: string;
+// }
 
 // const onSubmit = async (values: any, actions: any) => {
 //   console.log('submitted');
