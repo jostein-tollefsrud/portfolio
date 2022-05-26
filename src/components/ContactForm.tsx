@@ -20,7 +20,7 @@ import TextArea from '@/components/TextArea';
 const ContactForm: FC = () => {
   const [isSendt, setIsSendt] = useState(false);
 
-  const handleSubmit = async (values, actions) => {
+  const handleSubmit = async (values: any, actions: any) => {
     console.log(values);
     await new Promise((resolve) => setTimeout(resolve, 1000));
     console.log('sendt');
