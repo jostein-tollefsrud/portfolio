@@ -1,5 +1,6 @@
 import AvatarFull from '@/components/AvatarFull';
 import AvatarSmall from '@/components/AvatarSmall';
+import ContactForm from '@/components/ContactForm';
 import FormSocialList from '@/components/FormSocialList';
 import type { NextPage } from 'next';
 import Head from 'next/head';
@@ -155,18 +156,7 @@ const Home: NextPage = () => {
                 <div className='form-avatar'>
                   <AvatarSmall />
                 </div>
-                <form className='form'>
-                  <label htmlFor='name'>Name</label>
-                  <input type='text' name='name' id='name' />
-
-                  <label htmlFor='email'>Email</label>
-                  <input type='email' name='email' id='email' />
-
-                  <label htmlFor='message'>Message</label>
-                  <textarea name='message' id='message'></textarea>
-
-                  <button className='btn btn--red'>Send message</button>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>

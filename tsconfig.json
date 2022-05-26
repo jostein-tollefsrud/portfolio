@@ -21,6 +21,12 @@
       "@/styles/*": ["src/styles/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/_document.js"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/pages/_document.js",
+    "src/components/TextField.jsx"
+  ],
   "exclude": ["node_modules"]
 }

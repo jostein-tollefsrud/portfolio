@@ -1,0 +1,32 @@
+.text-field {
+  margin-bottom: 2rem;
+
+  &__input {
+    padding: 1rem;
+    border-radius: var(--border-radius-small);
+    border: var(--border-2);
+    font-size: inherit;
+    font-family: inherit;
+    width: 100%;
+
+    &--invalid {
+      border: 2px solid var(--color-red);
+    }
+
+    &--area {
+      height: 10ch;
+      max-width: 100%;
+    }
+  }
+
+  &__label {
+    display: block;
+    font-family: 'Barlow Condensed';
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  &__error-message {
+    color: var(--color-red);
+  }
+}
