@@ -1,0 +1,12 @@
+.loading {
+  border: 0.5rem solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 0.5rem solid var(--color-pink);
+  border-right: 0.5rem solid var(--color-green);
+  border-bottom: 0.5rem solid var(--color-red);
+  border-left: 0.5rem solid var(--color-yellow);
+  width: 1.8rem;
+  height: 1.8rem;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
