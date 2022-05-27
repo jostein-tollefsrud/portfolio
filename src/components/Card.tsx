@@ -21,7 +21,7 @@ const Card: FC<Props> = ({ cloudinaryImage, alt, title, children, link }) => {
               alt={alt}
               layout='fill'
               objectFit='cover'
-              quality='75'
+              quality='100'
               sizes='60vw'
               placeholder='blur'
               blurDataURL={cloudinaryImage.blurDataUrl}

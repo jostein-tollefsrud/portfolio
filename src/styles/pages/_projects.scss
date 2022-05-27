@@ -1,0 +1,69 @@
+.projects {
+  margin: auto;
+  padding: 8rem 3rem;
+  z-index: 3;
+  max-width: 600px;
+  margin: auto;
+  @include respond(1000px) {
+    max-width: 700px;
+  }
+  @include respond(1100px) {
+    max-width: 850px;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    padding: 2rem 0;
+    margin: 2rem 0;
+    background-color: var(--color-yellow);
+
+    @include respond(390px) {
+      flex-direction: row;
+      padding: 3rem 0;
+      margin: 3rem 0;
+    }
+
+    // @include respond(390px) {
+    //   flex-direction: row;
+    // }
+
+    & > * {
+      margin: 1rem;
+    }
+  }
+}
+
+.projects-hero {
+  height: 50vh;
+  z-index: 1;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+
+  &--plantmanager {
+    background-image: url(../../../public/images/ntnu-plant-manager.png);
+  }
+
+  &--bachelor {
+    background-image: url(../../../public/images/refurbishing-huset.png);
+  }
+
+  &--portfolio {
+    background-image: url(../../../public/images/min-portfolio.png);
+  }
+}
+
+.bg-white {
+  background-color: white;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  position: relative;
+  z-index: 2;
+}
