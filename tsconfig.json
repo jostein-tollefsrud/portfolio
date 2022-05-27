@@ -28,7 +28,8 @@
     "src/pages/_document.js",
     "src/components/TextField.jsx",
     "src/components/FormSocialList.jsx",
-    "src/components/ContactForm.jsx"
+    "src/components/ContactForm.jsx",
+    "src/components/Footer.jsx"
   ],
   "exclude": ["node_modules"]
 }

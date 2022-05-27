@@ -13,6 +13,7 @@ const ContactForm = () => {
   });
 
   const [token, setToken] = useState('');
+  const [showCaptcha, setShowCaptcha] = useState(false);
 
   const handleSubmit = async (values, actions) => {
     if (!token) {
@@ -71,17 +72,18 @@ const ContactForm = () => {
     >
       {({ isSubmitting, isValid }) => (
         <div>
-          <Form className='form'>
+          <Form className='form' onChange={() => setShowCaptcha(true)}>
             <TextField label='Name' name='name' type='text' />
             <TextField label='Email' name='email' type='email' />
             <TextArea label='Message' name='message' />
-
-            <ReCAPTCHA
-              sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-              size='compact'
-              onChange={(token) => setToken(token)}
-              onExpired={(e) => setToken('')}
-            />
+            {showCaptcha ? (
+              <ReCAPTCHA
+                sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+                size='compact'
+                onChange={(token) => setToken(token)}
+                onExpired={(e) => setToken('')}
+              />
+            ) : null}
 
             {form.state === 'loading' ? (
               <FormMessage text={form.message} type='sending' />

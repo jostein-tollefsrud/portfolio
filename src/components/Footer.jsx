@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { FC } from 'react';
 import { FiAward, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import Obfuscate from 'react-obfuscate'; // No typescript
 
-const Footer: FC = () => {
+const Footer = () => {
   return (
     <footer className='footer'>
       <address>
@@ -30,11 +30,16 @@ const Footer: FC = () => {
             </Link>
           </li>
           <li>
-            <Link href='mailto:mail@josteintollefsrud.no?subject=Hei!%20Jeg%20fant%20deg%20på%20nettsiden%20din&#128526;'>
-              <a aria-label='Send me an email' title='Send me an email'>
-                <FiMail />
-              </a>
-            </Link>
+            <Obfuscate
+              obfuscateChildren={false}
+              email='mail@josteintollefsrud.no'
+              aria-label='Send me an email'
+              headers={{
+                subject: 'Hei! Jeg fant deg på nettsiden din!',
+              }}
+            >
+              <FiMail />
+            </Obfuscate>
           </li>
           <li>
             <Link href='#' target='_blank' rel='noreferrer'>
