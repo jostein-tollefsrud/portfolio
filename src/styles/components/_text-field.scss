@@ -10,7 +10,7 @@
     width: 100%;
 
     &--invalid {
-      border: 2px solid var(--color-red);
+      border: 2px solid var(--color-warning);
     }
 
     &--area {
@@ -31,7 +31,7 @@
   }
 
   &__error-message {
-    color: var(--color-red);
+    color: var(--color-warning);
     font-size: 1.4rem;
     font-weight: 600;
   }

@@ -1,0 +1,35 @@
+.form-message {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius-small);
+  font-size: 1.4rem;
+  // line-height: 1;
+  display: flex;
+  align-items: center;
+  color: #000000;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 600;
+
+  &__icon {
+    line-height: 0;
+    padding-right: 0.9rem;
+    font-size: 1.8rem;
+  }
+
+  &--success {
+    background-color: #effbf3;
+    border: 2px solid #045d26;
+    color: #045d26;
+  }
+
+  &--error {
+    background-color: #fbdfdf;
+    border: 2px solid #920c19;
+    color: #920c19;
+  }
+
+  &--sending {
+    background-color: #ffffff;
+    border: 2px solid #dadada;
+  }
+}
