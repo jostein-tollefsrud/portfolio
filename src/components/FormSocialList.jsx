@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
+import Obfuscate from 'react-obfuscate'; // No typescript
 import { FiAward, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 
 const FormSocialList = () => {
@@ -30,15 +31,22 @@ const FormSocialList = () => {
         </a>
       </li>
       <li className='list-item'>
-        <Link href='mailto:mail@josteintollefsrud.no?subject=Hei!%20Jeg%20fant%20deg%20på%20nettsiden%20din&#128526;'>
-          <a>
-            <span className='list-item__box' aria-hidden='true'>
-              <FiMail className='list-item__box--icon' />
-            </span>
-            Email
-          </a>
-        </Link>
+        {/* Use obfuscate to hide email from bots */}
+        <Obfuscate
+          obfuscateChildren={false}
+          email='mail@josteintollefsrud.no'
+          aria-label='Send me an email'
+          headers={{
+            subject: 'Hei! Jeg fant deg på nettsiden din!',
+          }}
+        >
+          <span className='list-item__box' aria-hidden='true'>
+            <FiMail className='list-item__box--icon' />
+          </span>
+          Email
+        </Obfuscate>
       </li>
+
       <li className='list-item'>
         <Link href={'#'}>
           <a>
