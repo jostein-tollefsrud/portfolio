@@ -9,6 +9,7 @@
   padding: 0.3rem 0 0.3rem 1rem;
   background-color: var(--color-red);
   font-weight: 600;
+  z-index: 9999;
 
   &:focus {
     position: static;

@@ -35,17 +35,17 @@ const Navbar: FC = () => {
               </Link>
             </li>
             <li>
-              <Link href='#projects'>
+              <Link href='/#projects'>
                 <a>Projects</a>
               </Link>
             </li>
             <li>
-              <Link href='#about'>
+              <Link href='/#about'>
                 <a>About</a>
               </Link>
             </li>
             <li>
-              <Link href='#contact'>
+              <Link href='/#contact'>
                 <a>Contact</a>
               </Link>
             </li>

@@ -19,7 +19,7 @@ const ProjectsSection: FC<Props> = ({
       </h2>
       <div className='card-container'>
         <Card
-          link='#'
+          link='/projects/plantmanager'
           cloudinaryImage={plantmanagerImg}
           alt=''
           title={'NTNU plant manager'}
@@ -29,7 +29,7 @@ const ProjectsSection: FC<Props> = ({
         </Card>
 
         <Card
-          link='#'
+          link='/projects/bachelor-project'
           cloudinaryImage={bachelorImg}
           alt=''
           title={'Bachelor project'}
@@ -39,7 +39,7 @@ const ProjectsSection: FC<Props> = ({
         </Card>
 
         <Card
-          link='#'
+          link='/projects/personal-portfolio'
           cloudinaryImage={portfolioImg}
           alt=''
           title={'Personal portfolio'}

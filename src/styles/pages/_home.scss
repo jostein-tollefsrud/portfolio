@@ -44,13 +44,13 @@
 .section-projects {
   background-color: var(--color-pink);
   border: var(--border-1);
-  padding: 8rem 1rem;
+  padding: 8rem 2rem;
 }
 
 .section-about {
   background-color: var(--color-green);
   border: var(--border-1);
-  padding: 8rem;
+  padding: 8rem 2rem;
 
   &__container {
     max-width: var(--max-width-text);
