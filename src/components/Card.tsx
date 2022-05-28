@@ -7,24 +7,24 @@ interface Props {
   title: string;
   children: React.ReactNode;
   link: string;
-  cloudinaryImage: any;
+  img: any;
 }
 
-const Card: FC<Props> = ({ cloudinaryImage, alt, title, children, link }) => {
+const Card: FC<Props> = ({ img, alt, title, children, link }) => {
   return (
     <Link href={link}>
       <a className='card'>
         <article>
           <div className='card__image'>
             <Image
-              src={cloudinaryImage.src}
+              src={img}
               alt={alt}
               layout='fill'
               objectFit='cover'
               quality='100'
-              sizes='60vw'
-              placeholder='blur'
-              blurDataURL={cloudinaryImage.blurDataUrl}
+              // sizes='60vw'
+              // placeholder='blur'
+              // blurDataURL={cloudinaryImage.blurDataUrl}
             />
           </div>
           <div className='card__info'>

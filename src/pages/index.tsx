@@ -8,7 +8,6 @@ import Link from 'next/link';
 
 import AboutSection from '@/components/AboutSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import { getBase64ImageUrl } from 'src/utils/base64';
 
 interface Props {
   plantmanagerImg: any;
@@ -16,11 +15,7 @@ interface Props {
   portfolioImg: any;
 }
 
-const Home: NextPage<Props> = ({
-  plantmanagerImg,
-  bachelorImg,
-  portfolioImg,
-}) => {
+const Home: NextPage<Props> = () => {
   return (
     <div>
       <Head>
@@ -57,11 +52,7 @@ const Home: NextPage<Props> = ({
         </section>
 
         {/* #### PROJECTS #### */}
-        <ProjectsSection
-          plantmanagerImg={plantmanagerImg}
-          bachelorImg={bachelorImg}
-          portfolioImg={portfolioImg}
-        />
+        <ProjectsSection />
 
         {/* #### ABOUT #### */}
         <AboutSection />
@@ -98,39 +89,5 @@ const Home: NextPage<Props> = ({
     </div>
   );
 };
-
-export async function getStaticProps() {
-  const plantmanagerImgSrc = process.env.CLOUDINARY_PLANTMANAGER_IMAGE_SRC;
-  const bachelorImgSrc = process.env.CLOUDINARY_BACHELOR_IMAGE_SRC;
-  const portfolioImgSrc = process.env.CLOUDINARY_PORTFOLIO_IMAGE_SRC;
-  if (!plantmanagerImgSrc || !bachelorImgSrc || !portfolioImgSrc) {
-    throw new Error('Missing CLOUDINARY_EXAMPLE_IMAGE_SRC env variable');
-  }
-
-  const plantmanagerImgSrcblurDataUrl = await getBase64ImageUrl(
-    plantmanagerImgSrc
-  );
-
-  const bachelorImgSrcblurDataUrl = await getBase64ImageUrl(bachelorImgSrc);
-
-  const portfolioImgSrcblurDataUrl = await getBase64ImageUrl(portfolioImgSrc);
-
-  return {
-    props: {
-      plantmanagerImg: {
-        src: plantmanagerImgSrc,
-        blurDataUrl: plantmanagerImgSrcblurDataUrl,
-      },
-      bachelorImg: {
-        src: bachelorImgSrc,
-        blurDataUrl: bachelorImgSrcblurDataUrl,
-      },
-      portfolioImg: {
-        src: portfolioImgSrc,
-        blurDataUrl: portfolioImgSrcblurDataUrl,
-      },
-    },
-  };
-}
 
 export default Home;

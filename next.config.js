@@ -11,10 +11,6 @@ const nextConfig = {
     locales: ['en'],
     defaultLocale: 'en',
   },
-  images: {
-    loader: 'cloudinary',
-    path: cloudinaryBaseUrl,
-  },
 };
 
 module.exports = nextConfig;

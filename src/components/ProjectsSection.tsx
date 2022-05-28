@@ -1,17 +1,11 @@
 import Card from '@/components/Card';
 import { FC } from 'react';
 
-interface Props {
-  plantmanagerImg: any;
-  bachelorImg: any;
-  portfolioImg: any;
-}
+import plantmanagerIMG from '../../public/images/plantmanager-small.jpg';
+import bachelorIMG from '../../public/images/bachelor-small.jpg';
+import portfolioIMG from '../../public/images/portfolio-small.jpg';
 
-const ProjectsSection: FC<Props> = ({
-  plantmanagerImg,
-  bachelorImg,
-  portfolioImg,
-}) => {
+const ProjectsSection: FC = () => {
   return (
     <section id='projects' className='section-projects'>
       <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
@@ -19,19 +13,9 @@ const ProjectsSection: FC<Props> = ({
       </h2>
       <div className='card-container'>
         <Card
-          link='/projects/plantmanager'
-          cloudinaryImage={plantmanagerImg}
-          alt=''
-          title={'NTNU plant manager'}
-        >
-          Almost before we knew it, we had left the ground. Almost before we
-          knew it, we had left the ground.
-        </Card>
-
-        <Card
           link='/projects/bachelor-project'
-          cloudinaryImage={bachelorImg}
-          alt=''
+          img={bachelorIMG}
+          alt='printscreens of bachelor project webpage'
           title={'Bachelor project'}
         >
           Almost before we knew it, we had left the ground. Almost before we
@@ -39,9 +23,19 @@ const ProjectsSection: FC<Props> = ({
         </Card>
 
         <Card
+          link='/projects/plantmanager'
+          img={plantmanagerIMG}
+          alt='printscreens of ntnu plantmanager webpage'
+          title={'NTNU plant manager'}
+        >
+          Almost before we knew it, we had left the ground. Almost before we
+          knew it, we had left the ground.
+        </Card>
+
+        <Card
           link='/projects/personal-portfolio'
-          cloudinaryImage={portfolioImg}
-          alt=''
+          img={portfolioIMG}
+          alt='printscreens of my portfolio webpage'
           title={'Personal portfolio'}
         >
           Almost before we knew it, we had left the ground. Almost before we
