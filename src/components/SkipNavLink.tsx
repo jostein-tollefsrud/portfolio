@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import { FC, ReactNode, useEffect, useRef } from 'react';
+import LocaleSwitch from './LocaleSwitch';
 
 interface Props {
   id: string;
@@ -23,6 +24,7 @@ const SkipNavLink: FC<Props> = ({
   return (
     <>
       <div ref={skipRef} className='focusContainer' tabIndex={-1}></div>
+      <LocaleSwitch type='skip' />
       <a {...props} href={`#${id}`} className='skip-nav-link'>
         {children}
       </a>

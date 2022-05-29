@@ -1,5 +1,5 @@
 const path = require('path');
-const cloudinaryBaseUrl = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload/`;
+const { i18n } = require('./next-i18next.config');
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -7,10 +7,7 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  i18n: {
-    locales: ['en'],
-    defaultLocale: 'en',
-  },
+  i18n,
 };
 
 module.exports = nextConfig;

@@ -1,8 +1,11 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC, useState } from 'react';
+import LocaleSwitch from './LocaleSwitch';
 import Logo from './Logo';
 
 const Navbar: FC = () => {
+  const { locale } = useRouter();
   const [open, setOpen] = useState(false);
   return (
     <header className='header'>
@@ -24,30 +27,32 @@ const Navbar: FC = () => {
         </button>
 
         <nav
-          aria-label='main navigation'
+          aria-label={locale === 'no' ? 'Hoved navigasjon' : 'Main navigation'}
           className={`${open && 'open'}`}
-          onClick={() => setOpen(false)}
         >
           <ul>
-            <li>
+            <li onClick={() => setOpen(false)}>
               <Link href='/'>
-                <a>Home</a>
+                <a>{locale === 'no' ? 'Hjem' : 'Home'}</a>
               </Link>
             </li>
-            <li>
+            <li onClick={() => setOpen(false)}>
               <Link href='/#projects'>
-                <a>Projects</a>
+                <a>{locale === 'no' ? 'Prosjekter' : 'Projects'}</a>
               </Link>
             </li>
-            <li>
+            <li onClick={() => setOpen(false)}>
               <Link href='/#about'>
-                <a>About</a>
+                <a>{locale === 'no' ? 'Om meg' : 'About'}</a>
+              </Link>
+            </li>
+            <li onClick={() => setOpen(false)}>
+              <Link href='/#contact'>
+                <a>{locale === 'no' ? 'Kontakt' : 'Contact'}</a>
               </Link>
             </li>
             <li>
-              <Link href='/#contact'>
-                <a>Contact</a>
-              </Link>
+              <LocaleSwitch />
             </li>
           </ul>
         </nav>

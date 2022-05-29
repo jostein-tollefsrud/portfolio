@@ -4,39 +4,41 @@ import { FC } from 'react';
 import plantmanagerIMG from '../../public/images/plantmanager-small.jpg';
 import bachelorIMG from '../../public/images/bachelor-small.jpg';
 import portfolioIMG from '../../public/images/portfolio-small.jpg';
+import { useRouter } from 'next/router';
 
 const ProjectsSection: FC = () => {
+  const { locale } = useRouter();
   return (
     <section id='projects' className='section-projects'>
       <h2 className='heading-secondary u-text-center u-margin-bottom-large'>
-        Projects
+        {locale === 'no' ? 'Prosjekter' : 'Projects'}
       </h2>
       <div className='card-container'>
         <Card
-          link='/projects/bachelor-project'
+          link='/prosjekter/bachelor-project'
           img={bachelorIMG}
           alt='printscreens of bachelor project webpage'
-          title={'Bachelor project'}
+          title={locale === 'no' ? 'Bachelor prosjekt' : 'Bachelor project'}
         >
           Almost before we knew it, we had left the ground. Almost before we
           knew it, we had left the ground.
         </Card>
 
         <Card
-          link='/projects/plantmanager'
+          link='/prosjekter/plantmanager'
           img={plantmanagerIMG}
           alt='printscreens of ntnu plantmanager webpage'
           title={'NTNU plant manager'}
         >
-          Almost before we knew it, we had left the ground. Almost before we
-          knew it, we had left the ground.
+          Never forget to water your plants again! Our solution remember your
+          watering routine and when to fertilize them for you.
         </Card>
 
         <Card
-          link='/projects/personal-portfolio'
+          link='/prosjekter/personal-portfolio'
           img={portfolioIMG}
           alt='printscreens of my portfolio webpage'
-          title={'Personal portfolio'}
+          title={locale === 'no' ? 'Personlig portfolio' : 'Personal portfolio'}
         >
           Almost before we knew it, we had left the ground. Almost before we
           knew it, we had left the ground.

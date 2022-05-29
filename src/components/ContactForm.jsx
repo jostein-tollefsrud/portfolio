@@ -1,12 +1,14 @@
 import { Form, Formik } from 'formik';
 import { useState } from 'react';
-import { basicSchema } from '../schemas/formValidations';
 import TextField from '@/components/TextField';
 import TextArea from '@/components/TextArea';
 import FormMessage from './FormMessage';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useRouter } from 'next/router';
+import * as yup from 'yup';
 
 const ContactForm = () => {
+  const { locale } = useRouter();
   const [form, setForm] = useState({
     state: '',
     message: '',
@@ -19,13 +21,19 @@ const ContactForm = () => {
     if (!token) {
       setForm({
         state: 'error',
-        message: 'You must verify the captcha!',
+        message:
+          locale === 'no'
+            ? 'Du må verifisere captcha!'
+            : 'You must verify the captcha!',
       });
       return;
     }
 
     try {
-      setForm({ state: 'loading', message: 'sending message...' });
+      setForm({
+        state: 'loading',
+        message: locale === 'no' ? 'sender melding...' : 'sending message...',
+      });
       const res = await fetch(`api/contact`, {
         method: 'POST',
         headers: {
@@ -39,25 +47,52 @@ const ContactForm = () => {
       if (error) {
         setForm({
           state: 'error',
-          message: 'Something went wrong!',
+          message: locale === 'no' ? 'Noe gikk galt!' : 'Something went wrong!',
         });
         return;
       }
 
       setForm({
         state: 'success',
-        message: 'Your message was sent successfully',
+        message:
+          locale === 'no'
+            ? 'Din melding ble sendt'
+            : 'Your message was sent successfully',
       });
       setToken('');
       actions.resetForm();
     } catch (error) {
       setForm({
         state: 'error',
-        message: 'Something went wrong!',
+        message: locale === 'no' ? 'Noe gikk galt!' : 'Something went wrong!',
       });
       setToken('');
     }
   };
+
+  const basicSchema = yup.object().shape({
+    name: yup
+      .string()
+      .max(
+        40,
+        locale === 'no'
+          ? 'Må være under 40 bokstaver!'
+          : 'Must be lesser than 40 characters!'
+      )
+      .required(locale === 'no' ? 'Obligatorisk' : 'Required!'),
+    email: yup
+      .string()
+      .email(
+        locale === 'no'
+          ? 'Vennligst skriv inn en gyldig e-postadresse!'
+          : 'Please enter a valid email!'
+      )
+      .required(locale === 'no' ? 'Obligatorisk' : 'Required!'),
+    message: yup
+      .string()
+      .min(5, locale === 'no' ? 'Minst 5 bokstaver!' : 'Minimum 5 characters!')
+      .required(locale === 'no' ? 'Obligatorisk' : 'Required!'),
+  });
 
   return (
     <Formik
@@ -73,9 +108,20 @@ const ContactForm = () => {
       {({ isSubmitting, isValid }) => (
         <div>
           <Form className='form' onChange={() => setShowCaptcha(true)}>
-            <TextField label='Name' name='name' type='text' />
-            <TextField label='Email' name='email' type='email' />
-            <TextArea label='Message' name='message' />
+            <TextField
+              label={locale === 'no' ? 'Navn' : 'Name'}
+              name='name'
+              type='text'
+            />
+            <TextField
+              label={locale === 'no' ? 'E-post' : 'Email'}
+              name='email'
+              type='email'
+            />
+            <TextArea
+              label={locale === 'no' ? 'Melding' : 'Message'}
+              name='message'
+            />
             {showCaptcha ? (
               <ReCAPTCHA
                 sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
@@ -100,7 +146,7 @@ const ContactForm = () => {
               type='submit'
               className='btn btn--red'
             >
-              Send message
+              {locale === 'no' ? 'Send melding' : 'Send message'}
             </button>
           </Form>
         </div>
