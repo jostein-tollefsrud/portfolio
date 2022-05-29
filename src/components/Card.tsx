@@ -29,8 +29,10 @@ const Card: FC<Props> = ({ img, alt, title, children, link }) => {
           </div>
           <div className='card__info'>
             <h3 className='heading-tertiary u-margin-bottom-small'>{title}</h3>
-            <p className='card__text u-margin-bottom-medium'>{children}</p>
-            <div className='card__readmore'>Read more &rarr; </div>
+            <p className='card__text'>{children}</p>
+          </div>
+          <div className='card__readmore'>
+            Read more <span className='card__readmore--arrow'>&rarr;</span>
           </div>
         </article>
       </a>

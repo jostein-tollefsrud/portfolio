@@ -19,8 +19,8 @@ const PlantmanagerPage: NextPage = () => {
           </h1>
 
           <p className='text-sub'>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam
-            vel veniam, commodi corporis porro facere.
+            Never forget to water your plants again! Our solution remember your
+            watering routine and when to fertilize them for you.
           </p>
 
           <div className='projects__buttons'>
@@ -42,12 +42,20 @@ const PlantmanagerPage: NextPage = () => {
             </a>
           </div>
 
+          <h2 className='heading-secondary u-margin-bottom-small'>
+            Background
+          </h2>
+
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ut
             asperiores provident accusamus omnis cupiditate temporibus iusto!
             Voluptatem, natus corporis! Eos vel error nemo soluta ipsa amet
             placeat velit temporibus!
           </p>
+
+          <h2 className='heading-secondary u-margin-bottom-small'>
+            Improvements
+          </h2>
 
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id ut

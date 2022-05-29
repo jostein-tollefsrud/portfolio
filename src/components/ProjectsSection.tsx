@@ -28,8 +28,8 @@ const ProjectsSection: FC = () => {
           alt='printscreens of ntnu plantmanager webpage'
           title={'NTNU plant manager'}
         >
-          Almost before we knew it, we had left the ground. Almost before we
-          knew it, we had left the ground.
+          Never forget to water your plants again! Our solution remember your
+          watering routine and when to fertilize them for you.
         </Card>
 
         <Card
