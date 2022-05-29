@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 interface Props {
@@ -11,6 +12,7 @@ interface Props {
 }
 
 const Card: FC<Props> = ({ img, alt, title, children, link }) => {
+  const { locale } = useRouter();
   return (
     <Link href={link}>
       <a className='card'>
@@ -32,7 +34,8 @@ const Card: FC<Props> = ({ img, alt, title, children, link }) => {
             <p className='card__text'>{children}</p>
           </div>
           <div className='card__readmore'>
-            Read more <span className='card__readmore--arrow'>&rarr;</span>
+            {locale === 'no' ? 'Les mer' : 'Read more'}{' '}
+            <span className='card__readmore--arrow'>&rarr;</span>
           </div>
         </article>
       </a>
