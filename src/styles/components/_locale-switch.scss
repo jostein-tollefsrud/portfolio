@@ -1,0 +1,72 @@
+.locale-switch {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  // background-color: var(--color-yellow-light);
+  padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+  border-radius: var(--border-radius-small);
+  position: relative;
+  border: 2px solid black;
+
+  &.skip {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    .locale-switch__icon {
+      display: none;
+    }
+  }
+
+  &__select {
+    display: inline-block;
+    position: relative;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    // background-color: var(--color-yellow-light);
+    background-color: white;
+    padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+    color: black;
+    cursor: pointer;
+    box-shadow: none;
+
+    /* reset */
+
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    &:not(.skip-switch) {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    &.skip-switch {
+      margin-right: 0;
+      position: absolute;
+      transform: translateX(-200%);
+      transition: transform 0.3s;
+      border: 1px solid black;
+      display: block;
+      width: 100%;
+      padding: 0.7rem 1rem;
+      font-size: 1.8rem;
+      z-index: 9999;
+
+      &:focus {
+        position: static;
+        transform: translateX(0);
+        z-index: 9999;
+        outline: none;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 1.5rem;
+  }
+}

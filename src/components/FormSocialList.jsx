@@ -2,8 +2,10 @@ import Link from 'next/link';
 import React from 'react';
 import Obfuscate from 'react-obfuscate'; // No typescript
 import { FiAward, FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { useRouter } from 'next/router';
 
 const FormSocialList = () => {
+  const { locale } = useRouter();
   return (
     <ul className='social-list'>
       <li className='list-item'>
@@ -35,15 +37,20 @@ const FormSocialList = () => {
         <Obfuscate
           obfuscateChildren={false}
           email='mail@josteintollefsrud.no'
-          aria-label='Send me an email'
+          aria-label={
+            locale === 'no' ? 'Send meg en epost' : 'Send me an email'
+          }
           headers={{
-            subject: 'Hei! Jeg fant deg på nettsiden din!',
+            subject:
+              locale === 'no'
+                ? 'Hei! Jeg fant deg på nettsiden din!'
+                : 'Hello! I found you on your website!',
           }}
         >
           <span className='list-item__box' aria-hidden='true'>
             <FiMail className='list-item__box--icon' />
           </span>
-          Email
+          {locale === 'no' ? 'E-post' : 'Email'}
         </Obfuscate>
       </li>
 
