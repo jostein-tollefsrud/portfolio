@@ -4,14 +4,13 @@ import { useRouter } from 'next/router';
 import { FC } from 'react';
 
 interface Props {
-  alt: string;
   title: string;
   children: React.ReactNode;
   link: string;
   img: any;
 }
 
-const Card: FC<Props> = ({ img, alt, title, children, link }) => {
+const Card: FC<Props> = ({ img, title, children, link }) => {
   const { locale } = useRouter();
   return (
     <Link href={link}>
@@ -20,7 +19,7 @@ const Card: FC<Props> = ({ img, alt, title, children, link }) => {
           <div className='card__image'>
             <Image
               src={img}
-              alt={alt}
+              alt=''
               layout='fill'
               objectFit='cover'
               quality='100'

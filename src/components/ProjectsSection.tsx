@@ -17,7 +17,6 @@ const ProjectsSection: FC = () => {
         <Card
           link='/prosjekter/bachelor-project'
           img={bachelorIMG}
-          alt='printscreens of bachelor project webpage'
           title={locale === 'no' ? 'Bachelor prosjekt' : 'Bachelor project'}
         >
           Almost before we knew it, we had left the ground. Almost before we
@@ -27,7 +26,6 @@ const ProjectsSection: FC = () => {
         <Card
           link='/prosjekter/plantmanager'
           img={plantmanagerIMG}
-          alt='printscreens of ntnu plantmanager webpage'
           title={'NTNU plant manager'}
         >
           Never forget to water your plants again! Our solution remember your
@@ -37,11 +35,11 @@ const ProjectsSection: FC = () => {
         <Card
           link='/prosjekter/personal-portfolio'
           img={portfolioIMG}
-          alt='printscreens of my portfolio webpage'
           title={locale === 'no' ? 'Personlig portfolio' : 'Personal portfolio'}
         >
-          Almost before we knew it, we had left the ground. Almost before we
-          knew it, we had left the ground.
+          {locale === 'no'
+            ? 'Min personlige portfolio skal vise prosjekter jeg har laget, og samtidig vise hva jeg har lært gjennom tre år med studier.'
+            : 'My portfolio will show projects I have made, and at the same time show what I have learned through three years of study.'}
         </Card>
       </div>
     </section>
