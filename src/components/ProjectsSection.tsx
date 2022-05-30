@@ -37,8 +37,9 @@ const ProjectsSection: FC = () => {
           img={portfolioIMG}
           title={locale === 'no' ? 'Personlig portfolio' : 'Personal portfolio'}
         >
-          Almost before we knew it, we had left the ground. Almost before we
-          knew it, we had left the ground.
+          {locale === 'no'
+            ? 'Min personlige portfolio skal vise prosjekter jeg har laget, og samtidig vise hva jeg har lært gjennom tre år med studier.'
+            : 'My portfolio will show projects I have made, and at the same time show what I have learned through three years of study.'}
         </Card>
       </div>
     </section>
