@@ -17,7 +17,11 @@ const Navbar: FC = () => {
         </Link>
 
         <button
-          aria-label='menu'
+          aria-label={
+            locale === 'no'
+              ? `meny, ${open ? 'utvidet' : 'minimert'}`
+              : `menu, ${open ? 'opened' : 'closed'}`
+          }
           className={`header__button ${open && 'active'}`}
           onClick={() => setOpen(!open)}
         >

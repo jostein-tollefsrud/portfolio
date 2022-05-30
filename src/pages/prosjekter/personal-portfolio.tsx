@@ -88,13 +88,21 @@ const PersonalPortfolioPage: NextPage = () => {
             &quot;aria-labels&quot; for å utdype meningen med innholdet.
           </p>
 
-          <p className='u-margin-bottom-large'>
+          <p>
             Du kan bruke tastatur for å navigere hele nettstedet. Det første du
             &quot;tabber&quot; til er muligheten for å skifte språk, deretter
             kan du gå til hovedinnhold så du slipper å trykke igjennom
             navigasjonen. Jeg har valgt å fjerne outlines på enkelte elementer
             når du setter fokus, men det er erstattet med annen styling for å
             bedre passe inn i designet til siden.
+          </p>
+
+          <p className='u-margin-bottom-large'>
+            Selv om jeg ikke er veldig god på å bruke skjermleser har jeg testet
+            ut med skjermleseren som følger med Apple sin Macbook. Fant ut at
+            den ikke leste opp varsler dersom du ikke fulgte kravene i
+            kontaktskjemaet. Etter å ha tilrettelagt med aria ble det betydelig
+            enklere å bruke skjemaet.
           </p>
 
           <h2 className='heading-secondary u-margin-bottom-small'>
