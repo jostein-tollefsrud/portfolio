@@ -16,7 +16,7 @@ const Footer = () => {
               rel='noreferrer'
             >
               <a aria-label='LinkedIn' title='LinkedIn'>
-                <FiLinkedin />
+                <FiLinkedin aria-hidden='true' />
               </a>
             </Link>
           </li>
@@ -27,7 +27,7 @@ const Footer = () => {
               rel='noreferrer'
             >
               <a aria-label='Github' title='Github'>
-                <FiGithub />
+                <FiGithub aria-hidden='true' />
               </a>
             </Link>
           </li>
@@ -45,7 +45,7 @@ const Footer = () => {
                     : 'Hello! I found you on your website!',
               }}
             >
-              <FiMail />
+              <FiMail aria-hidden='true' />
             </Obfuscate>
           </li>
           <li>
@@ -54,7 +54,7 @@ const Footer = () => {
                 aria-label={locale === 'no' ? 'Min resume' : 'My Resume'}
                 title={locale === 'no' ? 'Min resume' : 'My Resume'}
               >
-                <FiAward />
+                <FiAward aria-hidden='true' />
               </a>
             </Link>
           </li>

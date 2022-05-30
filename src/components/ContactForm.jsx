@@ -107,7 +107,11 @@ const ContactForm = () => {
     >
       {({ isSubmitting, isValid }) => (
         <div>
-          <Form className='form' onChange={() => setShowCaptcha(true)}>
+          <Form
+            className='form'
+            onChange={() => setShowCaptcha(true)}
+            aria-label={locale === 'no' ? 'kontaktskjema' : 'Contact form'}
+          >
             <TextField
               label={locale === 'no' ? 'Navn' : 'Name'}
               name='name'

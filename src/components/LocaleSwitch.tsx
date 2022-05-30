@@ -15,10 +15,10 @@ const LocaleSwitch: FC<Props> = ({ type }) => {
 
   return (
     <div className={`locale-switch ${type === 'skip' && 'skip'}`}>
-      <FiGlobe className='locale-switch__icon' />
+      <FiGlobe className='locale-switch__icon' aria-hidden='true' />
       <select
         aria-label={`${
-          router.locale === 'no' ? 'Velg Språk' : 'Choolse language'
+          router.locale === 'no' ? 'Velg Språk' : 'Choose language'
         }`}
         name='language'
         id='language'
@@ -29,7 +29,7 @@ const LocaleSwitch: FC<Props> = ({ type }) => {
         <option value='no'>Norsk</option>
         <option value='en'>English</option>
       </select>
-      <FiChevronDown className='locale-switch__icon' />
+      <FiChevronDown className='locale-switch__icon' aria-hidden='true' />
     </div>
   );
 };

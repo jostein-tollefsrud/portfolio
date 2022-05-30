@@ -13,22 +13,22 @@ const FormMessage: FC<Props> = ({ text, type }) => {
   switch (type) {
     case 'sending':
       typeClassName = '--sending';
-      icon = <LoadingSpinner />;
+      icon = <LoadingSpinner aria-hidden='true' />;
       break;
     case 'success':
       typeClassName = '--success';
-      icon = <FiCheckCircle />;
+      icon = <FiCheckCircle aria-hidden='true' />;
       break;
     case 'error':
       typeClassName = '--error';
-      icon = <FiAlertCircle />;
+      icon = <FiAlertCircle aria-hidden='true' />;
       break;
     default:
       icon = null;
       break;
   }
   return (
-    <div className={`form-message form-message${typeClassName}`}>
+    <div className={`form-message form-message${typeClassName}`} role='alert'>
       <span aria-hidden='true' className='form-message__icon'>
         {icon}
       </span>

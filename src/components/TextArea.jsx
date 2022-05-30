@@ -11,6 +11,11 @@ const TextArea = ({ label, ...props }) => {
       <textarea
         {...field}
         {...props}
+        aria-invalid={meta.error ? 'true' : null}
+        aria-describedby={
+          meta.touched && meta.error ? `${field.name}aria-error` : null
+        }
+        aria-required='true'
         id={field.name}
         className={`text-field__input text-field__input--area ${
           meta.touched && meta.error && 'text-field__input--invalid'
@@ -21,6 +26,8 @@ const TextArea = ({ label, ...props }) => {
         component='div'
         name={field.name}
         className='text-field__error-message'
+        role='alert'
+        id={`${field.name}aria-error`}
       />
     </div>
   );
