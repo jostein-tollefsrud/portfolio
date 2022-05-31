@@ -47,14 +47,14 @@ const BachelorProjectPage: NextPage = () => {
             >
               Live demo
             </a>
-            {/* <a
-              href='#'
+            <a
+              href='https://github.com/jostein-tollefsrud/bachelor-project'
               className='btn btn--red'
               target='_blank'
               rel='noopener noreferrer'
             >
-              Source code
-            </a> */}
+              {locale === 'no' ? 'Kildekode' : 'Source code'}
+            </a>
           </div>
 
           <div className='u-margin-bottom-large'>
