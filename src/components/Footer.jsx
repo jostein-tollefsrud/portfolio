@@ -49,14 +49,19 @@ const Footer = () => {
             </Obfuscate>
           </li>
           <li>
-            <Link href='#' target='_blank' rel='noreferrer'>
-              <a
-                aria-label={locale === 'no' ? 'Min resume' : 'My Resume'}
-                title={locale === 'no' ? 'Min resume' : 'My Resume'}
-              >
-                <FiAward aria-hidden='true' />
-              </a>
-            </Link>
+            <a
+              aria-label={locale === 'no' ? 'Min resume' : 'My Resume'}
+              title={locale === 'no' ? 'Min resume' : 'My Resume'}
+              target='_blank'
+              rel='noreferrer'
+              href={
+                locale === 'no'
+                  ? './cv-jostein-tollefsrud-norsk.pdf'
+                  : './cv-jostein-tollefsrud-english.pdf'
+              }
+            >
+              <FiAward aria-hidden='true' />
+            </a>
           </li>
         </ul>
       </address>
