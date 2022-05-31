@@ -55,14 +55,20 @@ const FormSocialList = () => {
       </li>
 
       <li className='list-item'>
-        <Link href={'#'}>
-          <a>
-            <span className='list-item__box' aria-hidden='true'>
-              <FiAward className='list-item__box--icon' />
-            </span>
-            Resume
-          </a>
-        </Link>
+        <a
+          target='_blank'
+          rel='noreferrer'
+          href={
+            locale === 'no'
+              ? './cv-jostein-tollefsrud-norsk.pdf'
+              : './cv-jostein-tollefsrud-english.pdf'
+          }
+        >
+          <span className='list-item__box' aria-hidden='true'>
+            <FiAward className='list-item__box--icon' />
+          </span>
+          Resume
+        </a>
       </li>
     </ul>
   );

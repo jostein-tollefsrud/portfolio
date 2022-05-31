@@ -19,8 +19,9 @@ const ProjectsSection: FC = () => {
           img={bachelorIMG}
           title={locale === 'no' ? 'Bachelor prosjekt' : 'Bachelor project'}
         >
-          Almost before we knew it, we had left the ground. Almost before we
-          knew it, we had left the ground.
+          {locale === 'no'
+            ? 'Ny forbedret nettside med en CMS løsning som ikke krever kunnskap om HTML til Studenthuset i Gjøvik.'
+            : 'New improved website with a CMS solution that does not require knowledge of HTML for the Student House in Gjøvik.'}
         </Card>
 
         <Card
@@ -28,8 +29,9 @@ const ProjectsSection: FC = () => {
           img={plantmanagerIMG}
           title={'NTNU plant manager'}
         >
-          Never forget to water your plants again! Our solution remember your
-          watering routine and when to fertilize them for you.
+          {locale === 'no'
+            ? 'Dette prosjektet ble laget for å holde orden på vanning, gjødsling og plassering av planter på NTNU Gjøvik.'
+            : 'This project was created to keep track on watering, fertilizing and placment of plants at NTNU Gjøvik.'}
         </Card>
 
         <Card

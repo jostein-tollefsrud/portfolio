@@ -1,0 +1,16 @@
+.techstack {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  flex-wrap: wrap;
+
+  li {
+    border: 2px solid black;
+    border-radius: var(--border-radius-small);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 1.5rem;
+    margin: 1rem;
+  }
+}

@@ -38,7 +38,7 @@ const PersonalPortfolioPage: NextPage = () => {
             </>
           )}
 
-          <div className='projects__buttons'>
+          <div className='projects__buttons u-margin-bottom-large'>
             {/* <a
               href='https://josteintollefsrud.no/'
               className='btn btn--red'
@@ -53,8 +53,24 @@ const PersonalPortfolioPage: NextPage = () => {
               target='_blank'
               rel='noopener noreferrer'
             >
-              Source code
+              {locale === 'no' ? 'Kildekode' : 'Source code'}
             </a>
+          </div>
+
+          <div className='u-margin-bottom-large'>
+            <h2 className='heading-secondary u-margin-bottom-small'>
+              {locale === 'no' ? 'Teknologistabel' : 'Tech stack'}
+            </h2>
+
+            <ul className='techstack'>
+              <li>Next.js</li>
+              <li>React.js</li>
+              <li>Netlify</li>
+              <li>Sass</li>
+              <li>Formik</li>
+              <li>Yup</li>
+              <li>Nodemailer</li>
+            </ul>
           </div>
 
           {locale === 'no' ? (
@@ -93,13 +109,21 @@ const PersonalPortfolioPage: NextPage = () => {
                 Teknologier
               </h2>
 
-              <p className='u-margin-bottom-large'>
+              <p>
                 Nettsiden er bygget med Next.js, som er et rammeverktøy bygget
                 på React.js. Dette forenkler ruting og tilpassing av språk. Jeg
                 ønsket å lære Sass (Syntactically Awesome Style Sheets) så
                 derfor er denne nettsiden laget med det. Sammen med BEM (Block
                 Element Modifier) navnemetodikk har det gjort strukturering og
                 skriving av CSS mer oversiktlig.
+              </p>
+
+              <p className='u-margin-bottom-large'>
+                Jeg ønsket å gi brukeren mulighet til å sende meg e-post via et
+                kontaktskjema. For å sende det bruker jeg Nodemailer. For å
+                unngå spam har jeg lagt til Google sin reCaptcha som sjekker om
+                det er en bot som prøver å spamme før e-posten blir sendt via
+                Nodemailer.
               </p>
 
               <h2 className='heading-secondary u-margin-bottom-small'>
@@ -183,13 +207,20 @@ const PersonalPortfolioPage: NextPage = () => {
                 Technologies
               </h2>
 
-              <p className='u-margin-bottom-large'>
+              <p>
                 The website is built with Next.js, which is a framework tool
                 built on React.js. This simplifies the routing and customization
                 of languages. I wanted to teach Sass (Syntactically Awesome
                 Style Sheets) so therefore this website is made with it.
                 Together with BEM (Block Element Modifier) ​​naming methodology
                 it has done structuring and writing CSS more clearly.
+              </p>
+
+              <p className='u-margin-bottom-large'>
+                I wanted to allow the user to send me an email via a contact
+                form. To send the message I am use Nodemailer. To avoid spam I
+                have added Google&apos;s reCaptcha which checks if it is a bot
+                that tries to spam before the email is sent via Nodemailer.
               </p>
 
               <h2 className='heading-secondary u-margin-bottom-small'>
